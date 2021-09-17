@@ -2,26 +2,26 @@ syntax = "proto3";
 import "storage.proto";
 import "status.proto";
 
-package Main;
-
-message Request {
-    uint64 uid = 1;
-    oneof content {
-        Status.PingRequest ping_request = 2;
-        Storage.ListRequest storage_list_request = 3;
-        Storage.ReadRequest storage_read_request = 4;
-        Storage.WriteRequest storage_write_request = 5;
-    }
-    bool last = 15;
+enum Status {
+    OK = 0;
+    ERROR = 1;
+    ERROR_NO_SPACE = 2;
+    ERROR_NO_FILE = 3;
 }
 
-message Response {
+message Main {
     uint64 uid = 1;
+    Status status = 2;
+    bool last = 3;
     oneof content {
-        Status.PingResponse ping_response = 2;
-        Storage.ListResponse storage_list_response = 3;
-        Storage.ReadResponse storage_read_response = 4;
-        Storage.WriteResponse storage_write_response = 5;
+        .Status.PingRequest ping_request = 4;
+        .Status.PingResponse ping_response = 5;
+        .Storage.ListRequest storage_list_request = 6;
+        .Storage.ListResponse storage_list_response = 7;
+        .Storage.ReadRequest storage_read_request = 8;
+        .Storage.ReadResponse storage_read_response = 9;
+        .Storage.WriteRequest storage_write_request = 10;
+        .Storage.DeleteRequest storage_delete_request = 11;
     }
-    bool last = 15;
 }
+

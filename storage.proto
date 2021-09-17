@@ -26,16 +26,15 @@ message ReadRequest {
 }
 
 message ReadResponse {
-    string error = 1;
-    repeated Element storage_element = 2;
+    Element storage_element = 1;
 }
 
 message WriteRequest {
-    string filepath = 1;
-    repeated Element storage_element = 2;
+    string path = 1;
+    Element storage_element = 2;
 }
 
-message WriteResponse {
-    string error = 1;
+message DeleteRequest {
+    string filename = 1;
 }
 
