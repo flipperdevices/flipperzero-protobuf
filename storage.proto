@@ -1,18 +1,41 @@
 syntax = "proto3";
 
-message StorageListRequest {
-    string path = 1;
-}
+package Storage;
 
-message StorageListAnswer {
+message Element {
     enum FileType {
-        FILE = 0;
+        FILE = 0;   // default value
         DIR = 1;
     }
     FileType type = 1;
     string name = 2;
-    optional uint64 size = 3;
+    uint64 size = 3;
+    bytes data = 4;
 }
 
-message StorageListEOF {
+message ListRequest {
+    string path = 1;
 }
+
+message ListResponse {
+    repeated Element storage_element = 1;
+}
+
+message ReadRequest {
+    string filepath = 1;
+}
+
+message ReadResponse {
+    string error = 1;
+    repeated Element storage_element = 2;
+}
+
+message WriteRequest {
+    string filepath = 1;
+    repeated Element storage_element = 2;
+}
+
+message WriteResponse {
+    string error = 1;
+}
+
