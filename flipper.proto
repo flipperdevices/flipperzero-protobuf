@@ -2,7 +2,7 @@ syntax = "proto3";
 import "storage.proto";
 import "status.proto";
 
-enum Status {
+enum CommandStatus {
     OK = 0;
     ERROR = 1;
     ERROR_NO_SPACE = 2;
@@ -10,8 +10,8 @@ enum Status {
 }
 
 message Main {
-    uint64 uid = 1;
-    Status status = 2;
+    uint64 command_id = 1;
+    CommandStatus command_status = 2;
     bool last = 3;
     oneof content {
         .Status.PingRequest ping_request = 4;
