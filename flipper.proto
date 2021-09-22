@@ -2,18 +2,25 @@ syntax = "proto3";
 import "storage.proto";
 import "status.proto";
 
+package PB;
+
 enum CommandStatus {
     OK = 0;
     ERROR = 1;
     ERROR_NO_SPACE = 2;
     ERROR_NO_FILE = 3;
+    ERROR_DECODE = 4;
+}
+
+message Dummy {
 }
 
 message Main {
     uint64 command_id = 1;
     CommandStatus command_status = 2;
-    bool last = 3;
+    bool not_last = 3;
     oneof content {
+        Dummy dummy = 12;
         .Status.PingRequest ping_request = 4;
         .Status.PingResponse ping_response = 5;
         .Storage.ListRequest storage_list_request = 6;
