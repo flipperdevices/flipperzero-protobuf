@@ -21,14 +21,14 @@ message Main {
     bool not_last = 3;
     oneof content {
         Dummy dummy = 12;
-        .Status.PingRequest ping_request = 4;
-        .Status.PingResponse ping_response = 5;
-        .Storage.ListRequest storage_list_request = 6;
-        .Storage.ListResponse storage_list_response = 7;
-        .Storage.ReadRequest storage_read_request = 8;
-        .Storage.ReadResponse storage_read_response = 9;
-        .Storage.WriteRequest storage_write_request = 10;
-        .Storage.DeleteRequest storage_delete_request = 11;
+        .PB_Status.PingRequest ping_request = 4;
+        .PB_Status.PingResponse ping_response = 5;
+        .PB_Storage.ListRequest storage_list_request = 6;
+        .PB_Storage.ListResponse storage_list_response = 7;
+        .PB_Storage.ReadRequest storage_read_request = 8;
+        .PB_Storage.ReadResponse storage_read_response = 9;
+        .PB_Storage.WriteRequest storage_write_request = 10;
+        .PB_Storage.DeleteRequest storage_delete_request = 11;
     }
 }
 

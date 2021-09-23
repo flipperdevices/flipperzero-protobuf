@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package Status;
+package PB_Status;
 
 message PingRequest {
 }

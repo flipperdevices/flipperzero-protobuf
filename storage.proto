@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package Storage;
+package PB_Storage;
 
 message Element {
     enum FileType {
