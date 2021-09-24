@@ -1,0 +1,8 @@
+//PB_Storage.ListRequest.path     callback_datatype:"void*" // string_t*
+//PB_Storage.ListRequest.path     callback_function:"DecodeStringt"
+//            [(nanopb).type = FT_POINTER, (nanopb).max_count = 10, (nanopb).fixed_count = true];
+//PB_Storage.ListRequest.path     max_count:10
+//PB_Storage.ListRequest.path     fixed_count:true
+
+*.path     type:FT_POINTER
+
