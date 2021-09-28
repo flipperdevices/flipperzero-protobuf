@@ -9,7 +9,7 @@ message Element {
     }
     FileType type = 1;
     string name = 2;
-    uint64 size = 3;
+    uint32 size = 3;
     bytes data = 4;
 }
 

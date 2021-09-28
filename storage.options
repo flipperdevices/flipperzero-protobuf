@@ -4,5 +4,12 @@
 //PB_Storage.ListRequest.path     max_count:10
 //PB_Storage.ListRequest.path     fixed_count:true
 
-*.path     type:FT_POINTER
+PB_Storage.Element.name                     type:FT_POINTER
+PB_Storage.Element.data                     type:FT_POINTER
+PB_Storage.ListRequest.path                 type:FT_POINTER
+PB_Storage.ReadRequest.filepath             type:FT_POINTER
+PB_Storage.WriteRequest.path                type:FT_POINTER
+PB_Storage.DeleteRequest.filename           type:FT_POINTER
+
+PB_Storage.ListResponse.storage_element     max_count:8
 

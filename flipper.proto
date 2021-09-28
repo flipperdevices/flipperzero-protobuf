@@ -16,7 +16,7 @@ message Dummy {
 }
 
 message Main {
-    uint64 command_id = 1;
+    uint32 command_id = 1;
     CommandStatus command_status = 2;
     bool not_last = 3;
     oneof content {
