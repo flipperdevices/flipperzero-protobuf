@@ -22,7 +22,7 @@ message ListResponse {
 }
 
 message ReadRequest {
-    string filepath = 1;
+    string path = 1;
 }
 
 message ReadResponse {
@@ -35,6 +35,18 @@ message WriteRequest {
 }
 
 message DeleteRequest {
-    string filename = 1;
+    string path = 1;
+}
+
+message MkdirRequest {
+    string path = 1;
+}
+
+message Md5sumRequest {
+    string path = 1;
+}
+
+message Md5sumResponse {
+    string md5sum = 1;
 }
 

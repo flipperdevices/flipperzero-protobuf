@@ -1,15 +1,16 @@
-//PB_Storage.ListRequest.path     callback_datatype:"void*" // string_t*
-//PB_Storage.ListRequest.path     callback_function:"DecodeStringt"
-//            [(nanopb).type = FT_POINTER, (nanopb).max_count = 10, (nanopb).fixed_count = true];
-//PB_Storage.ListRequest.path     max_count:10
-//PB_Storage.ListRequest.path     fixed_count:true
-
 PB_Storage.Element.name                     type:FT_POINTER
 PB_Storage.Element.data                     type:FT_POINTER
 PB_Storage.ListRequest.path                 type:FT_POINTER
-PB_Storage.ReadRequest.filepath             type:FT_POINTER
+PB_Storage.ReadRequest.path                 type:FT_POINTER
 PB_Storage.WriteRequest.path                type:FT_POINTER
-PB_Storage.DeleteRequest.filename           type:FT_POINTER
+PB_Storage.DeleteRequest.path               type:FT_POINTER
+
+PB_Storage.MkdirRequest.path                type:FT_POINTER
+PB_Storage.Md5sumRequest.path               type:FT_POINTER
 
 PB_Storage.ListResponse.storage_element     max_count:8
+
+// not used by nanopb, better server should keep in mind this max size
+PB_Storage.Element.data                     max_size:4096
+PB_Storage.Md5sumResponse.md5sum            max_length:32
 
