@@ -23,6 +23,10 @@ enum CommandStatus {
     ERROR_STORAGE_ALREADY_OPEN = 13; /**< File/Dir already opened */
 }
 
+/* There are Server commands (e.g. Storage_write), which have no body message
+ * in response. But 'oneof' obligate to have at least 1 encoded message
+ * in scope. For this needs Empty message is implemented.
+ */
 message Empty {
 }
 

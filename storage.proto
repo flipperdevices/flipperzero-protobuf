@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package PB_Storage;
 
-message Element {
+message File {
     enum FileType {
         FILE = 0;   // default value
         DIR = 1;
@@ -18,7 +18,7 @@ message ListRequest {
 }
 
 message ListResponse {
-    repeated Element storage_element = 1;
+    repeated File file = 1;
 }
 
 message ReadRequest {
@@ -26,12 +26,12 @@ message ReadRequest {
 }
 
 message ReadResponse {
-    Element storage_element = 1;
+    File file = 1;
 }
 
 message WriteRequest {
     string path = 1;
-    Element storage_element = 2;
+    File file = 2;
 }
 
 message DeleteRequest {
