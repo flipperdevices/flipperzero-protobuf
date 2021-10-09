@@ -1,0 +1,16 @@
+PB_Storage.File.name                        type:FT_POINTER
+PB_Storage.File.data                        type:FT_POINTER
+PB_Storage.ListRequest.path                 type:FT_POINTER
+PB_Storage.ReadRequest.path                 type:FT_POINTER
+PB_Storage.WriteRequest.path                type:FT_POINTER
+PB_Storage.DeleteRequest.path               type:FT_POINTER
+
+PB_Storage.MkdirRequest.path                type:FT_POINTER
+PB_Storage.Md5sumRequest.path               type:FT_POINTER
+
+PB_Storage.ListResponse.file                max_count:8
+
+// not used by nanopb, better server should keep in mind this max size
+PB_Storage.File.data                        max_size:4096
+PB_Storage.Md5sumResponse.md5sum            max_length:32
+
