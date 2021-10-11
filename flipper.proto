@@ -10,7 +10,7 @@ enum CommandStatus {
     ERROR_DECODE = 2; /**< Command can't be decoded successfully - command_id in response may be wrong! */
     ERROR_NOT_IMPLEMENTED = 3; /**< Command succesfully decoded, but not implemented (deprecated or not yet implemented) */
     ERROR_BUSY = 4; /**< Somebody took global lock, so not all commands are available */
-    ERROR_CONTINUOUS_COMMAND_INTERRUPTED = 14; /**< Not received not_last == 0 */
+    ERROR_CONTINUOUS_COMMAND_INTERRUPTED = 14; /**< Not received has_next == 0 */
     ERROR_INVALID_PARAMETERS = 15; /**< not provided (or provided invalid) crucial parameters to perform rpc */
     ERROR_STORAGE_NOT_READY = 5; /**< FS not ready */
     ERROR_STORAGE_EXIST = 6; /**< File/Dir alrady exist */
@@ -33,7 +33,7 @@ message Empty {
 message Main {
     uint32 command_id = 1;
     CommandStatus command_status = 2;
-    bool not_last = 3;
+    bool has_next = 3;
     oneof content {
         Empty empty = 4;
         .PB_Status.PingRequest ping_request = 5;
