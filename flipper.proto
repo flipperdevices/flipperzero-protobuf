@@ -3,7 +3,7 @@ import "storage.proto";
 import "status.proto";
 
 package PB;
-option java_package = "com.flipperdevices.bridge.protobuf";
+option java_package = "com.flipperdevices.protobuf";
 
 enum CommandStatus {
     OK = 0;
