@@ -1,0 +1,26 @@
+name: 'Build protobuf headers'
+
+on: 
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout flipperzero-protobuf
+        uses: actions/checkout@v2
+
+      - name: Checkout nanopb
+        uses: actions/checkout@v2
+        with:
+          repository: nanopb/nanopb
+          path: nanopb
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+
+      - name: Setup protobuf
+        run: sudo apt-get -y install protobuf-compiler && python -m pip install --upgrade protobuf
+
+      - name: Build headers
+        run: python3 nanopb/generator/nanopb_generator.py -q -I . -D /tmp *.proto
