@@ -1,10 +1,10 @@
-name: 'Build protobuf headers'
+name: 'Generate protobuf sources'
 
 on: 
   push:
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout flipperzero-protobuf
@@ -22,5 +22,5 @@ jobs:
       - name: Setup protobuf
         run: sudo apt-get -y install protobuf-compiler && python -m pip install --upgrade protobuf
 
-      - name: Build headers
+      - name: Generate sources
         run: python3 nanopb/generator/nanopb_generator.py -q -I . -D /tmp *.proto
