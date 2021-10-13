@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package PB_App;
+option java_package = "com.flipperdevices.protobuf.app";
+
+message Start {
+    string name = 1;
+    string args = 2;
+}
+
+message LockStatusRequest {
+}
+
+message LockStatusResponse {
+    bool locked = 1;
+}
+

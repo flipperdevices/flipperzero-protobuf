@@ -10,7 +10,8 @@ PB_Storage.Md5sumRequest.path               type:FT_POINTER
 
 PB_Storage.ListResponse.file                max_count:8
 
-// not used by nanopb, better server should keep in mind this max size
-PB_Storage.File.data                        max_size:4096
+// not affected by nanopb, so server & client should keep in mind these max values
+PB_Storage.File.data                        max_size:512
 PB_Storage.Md5sumResponse.md5sum            max_length:32
+PB_Storage.*.path                           max_length:255
 

@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "storage.proto";
 import "status.proto";
+import "application.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
@@ -22,6 +23,8 @@ enum CommandStatus {
     ERROR_STORAGE_INTERNAL = 11; /**< Internal error */
     ERROR_STORAGE_NOT_IMPLEMENTED = 12; /**< Functon not implemented */
     ERROR_STORAGE_ALREADY_OPEN = 13; /**< File/Dir already opened */
+    ERROR_APP_CANT_START = 16; /**< Can't start app - or internal error */
+    ERROR_APP_SYSTEM_LOCKED = 17; /**< Another app is running */
 }
 
 /* There are Server commands (e.g. Storage_write), which have no body message
@@ -48,6 +51,9 @@ message Main {
         .PB_Storage.MkdirRequest storage_mkdir_request = 13;
         .PB_Storage.Md5sumRequest storage_md5sum_request = 14;
         .PB_Storage.Md5sumResponse storage_md5sum_response = 15;
+        .PB_App.Start app_start = 16;
+        .PB_App.LockStatusRequest app_lock_status_request = 17;
+        .PB_App.LockStatusResponse app_lock_status_response = 18;
     }
 }
 
