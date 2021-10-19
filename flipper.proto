@@ -23,7 +23,7 @@ enum CommandStatus {
     ERROR_STORAGE_INTERNAL = 11; /**< Internal error */
     ERROR_STORAGE_NOT_IMPLEMENTED = 12; /**< Functon not implemented */
     ERROR_STORAGE_ALREADY_OPEN = 13; /**< File/Dir already opened */
-    ERROR_APP_CANT_START = 16; /**< Can't start app - or internal error */
+    ERROR_APP_CANT_START = 16; /**< Can't start app - internal error */
     ERROR_APP_SYSTEM_LOCKED = 17; /**< Another app is running */
 }
 
@@ -34,12 +34,16 @@ enum CommandStatus {
 message Empty {
 }
 
+message StopSession {
+}
+
 message Main {
     uint32 command_id = 1;
     CommandStatus command_status = 2;
     bool has_next = 3;
     oneof content {
         Empty empty = 4;
+        StopSession stop_session = 19;
         .PB_Status.PingRequest ping_request = 5;
         .PB_Status.PingResponse ping_response = 6;
         .PB_Storage.ListRequest storage_list_request = 7;
