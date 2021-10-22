@@ -23,6 +23,7 @@ enum CommandStatus {
     ERROR_STORAGE_INTERNAL = 11; /**< Internal error */
     ERROR_STORAGE_NOT_IMPLEMENTED = 12; /**< Functon not implemented */
     ERROR_STORAGE_ALREADY_OPEN = 13; /**< File/Dir already opened */
+    ERROR_STORAGE_DIR_NOT_EMPTY = 18; /**< Directory, you're going to remove is not empty */
     ERROR_APP_CANT_START = 16; /**< Can't start app - internal error */
     ERROR_APP_SYSTEM_LOCKED = 17; /**< Another app is running */
 }

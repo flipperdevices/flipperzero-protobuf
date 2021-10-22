@@ -37,6 +37,7 @@ message WriteRequest {
 
 message DeleteRequest {
     string path = 1;
+    bool recursive = 2;
 }
 
 message MkdirRequest {
