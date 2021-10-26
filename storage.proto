@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package PB_Storage;
 option java_package = "com.flipperdevices.protobuf.storage";
+option go_package = "github.com/flipperdevices/go-flipper/proto/storage";
 
 message File {
     enum FileType {
