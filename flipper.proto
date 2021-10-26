@@ -8,12 +8,16 @@ option java_package = "com.flipperdevices.protobuf";
 
 enum CommandStatus {
     OK = 0;
+
+    /**< Common Errors */
     ERROR = 1; /**< Unknown error */
     ERROR_DECODE = 2; /**< Command can't be decoded successfully - command_id in response may be wrong! */
     ERROR_NOT_IMPLEMENTED = 3; /**< Command succesfully decoded, but not implemented (deprecated or not yet implemented) */
     ERROR_BUSY = 4; /**< Somebody took global lock, so not all commands are available */
     ERROR_CONTINUOUS_COMMAND_INTERRUPTED = 14; /**< Not received has_next == 0 */
     ERROR_INVALID_PARAMETERS = 15; /**< not provided (or provided invalid) crucial parameters to perform rpc */
+
+    /**< Storage Errors */
     ERROR_STORAGE_NOT_READY = 5; /**< FS not ready */
     ERROR_STORAGE_EXIST = 6; /**< File/Dir alrady exist */
     ERROR_STORAGE_NOT_EXIST = 7; /**< File/Dir does not exist */
@@ -23,7 +27,10 @@ enum CommandStatus {
     ERROR_STORAGE_INTERNAL = 11; /**< Internal error */
     ERROR_STORAGE_NOT_IMPLEMENTED = 12; /**< Functon not implemented */
     ERROR_STORAGE_ALREADY_OPEN = 13; /**< File/Dir already opened */
-    ERROR_APP_CANT_START = 16; /**< Can't start app - or internal error */
+    ERROR_STORAGE_DIR_NOT_EMPTY = 18; /**< Directory, you're going to remove is not empty */
+
+    /**< Application Errors */
+    ERROR_APP_CANT_START = 16; /**< Can't start app - internal error */
     ERROR_APP_SYSTEM_LOCKED = 17; /**< Another app is running */
 }
 
@@ -34,12 +41,16 @@ enum CommandStatus {
 message Empty {
 }
 
+message StopSession {
+}
+
 message Main {
     uint32 command_id = 1;
     CommandStatus command_status = 2;
     bool has_next = 3;
     oneof content {
         Empty empty = 4;
+        StopSession stop_session = 19;
         .PB_Status.PingRequest ping_request = 5;
         .PB_Status.PingResponse ping_response = 6;
         .PB_Storage.ListRequest storage_list_request = 7;
