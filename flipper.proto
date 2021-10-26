@@ -5,6 +5,7 @@ import "application.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
+option go_package = "github.com/flipperdevices/go-flipper/proto";
 
 enum CommandStatus {
     OK = 0;
