@@ -31,17 +31,17 @@ message ReadResponse {
     File file = 1;
 }
 
-message WriteRequest {
+message Write {
     string path = 1;
     File file = 2;
 }
 
-message DeleteRequest {
+message Delete {
     string path = 1;
     bool recursive = 2;
 }
 
-message MkdirRequest {
+message Mkdir {
     string path = 1;
 }
 
