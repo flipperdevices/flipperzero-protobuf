@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package PB_App;
 option java_package = "com.flipperdevices.protobuf.app";
-option go_package = "github.com/flipperdevices/go-flipper/proto/app";
 
 message StartRequest {
     string name = 1;
