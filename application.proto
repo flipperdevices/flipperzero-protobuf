@@ -4,7 +4,7 @@ package PB_App;
 option java_package = "com.flipperdevices.protobuf.app";
 option go_package = "github.com/flipperdevices/go-flipper/proto/app";
 
-message Start {
+message StartRequest {
     string name = 1;
     string args = 2;
 }
