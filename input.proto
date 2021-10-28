@@ -20,7 +20,7 @@ enum Type {
     REPEAT = 4; /**< Repeat event, emmited with INPUT_REPEATE_PRESS period after InputTypeLong event */
 }
 
-message SendKeyRequest {
+message SendEventRequest {
     Key key = 1;
     Type type = 2;
 }

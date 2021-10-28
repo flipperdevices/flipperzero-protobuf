@@ -70,7 +70,7 @@ message Main {
         .PB_Screen.StartStreamRequest screen_start_stream_request = 20;
         .PB_Screen.StopStreamRequest screen_stop_stream_request = 21;
         .PB_Screen.StreamFrame screen_stream_frame = 22;
-        .PB_Input.SendKeyRequest input_send_key_request = 23;
+        .PB_Input.SendEventRequest input_send_event_request = 23;
     }
 }
 
