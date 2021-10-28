@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package PB_Input;
-option java_package = "com.flipperdevices.protobuf.input";
+package PB_Gui;
+option java_package = "com.flipperdevices.protobuf.screen";
 
-enum Key {
+enum InputKey {
     UP = 0;
     DOWN = 1;
     RIGHT = 2;
@@ -12,7 +12,7 @@ enum Key {
     BACK = 5;
 };
 
-enum Type {
+enum InputType {
     PRESS = 0; /**< Press event, emitted after debounce */
     RELEASE = 1; /**< Release event, emitted after debounce */
     SHORT = 2; /**< Short event, emitted after InputTypeRelease done withing INPUT_LONG_PRESS interval */
@@ -20,7 +20,17 @@ enum Type {
     REPEAT = 4; /**< Repeat event, emmited with INPUT_REPEATE_PRESS period after InputTypeLong event */
 }
 
-message SendEventRequest {
-    Key key = 1;
-    Type type = 2;
+message StartScreenStreamRequest {
+}
+
+message StopScreenStreamRequest {
+}
+
+message ScreenStreamFrame {
+    bytes data = 1;
+}
+
+message SendInputEventRequest {
+    InputKey key = 1;
+    InputType type = 2;
 }
