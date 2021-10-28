@@ -3,6 +3,7 @@ import "storage.proto";
 import "status.proto";
 import "application.proto";
 import "screen.proto";
+import "input.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
@@ -69,6 +70,7 @@ message Main {
         .PB_Screen.StartStreamRequest screen_start_stream_request = 20;
         .PB_Screen.StopStreamRequest screen_stop_stream_request = 21;
         .PB_Screen.StreamFrame screen_stream_frame = 22;
+        .PB_Input.SendKeyRequest input_send_key_request = 23;
     }
 }
 

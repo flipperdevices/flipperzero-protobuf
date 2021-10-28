@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package PB_Input;
+option java_package = "com.flipperdevices.protobuf.input";
+
+enum Key {
+    UP = 0;
+    DOWN = 1;
+    RIGHT = 2;
+    LEFT = 3;
+    OK = 4;
+    BACK = 5;
+};
+
+enum Type {
+    PRESS = 0; /**< Press event, emitted after debounce */
+    RELEASE = 1; /**< Release event, emitted after debounce */
+    SHORT = 2; /**< Short event, emitted after InputTypeRelease done withing INPUT_LONG_PRESS interval */
+    LONG = 3; /**< Long event, emmited after INPUT_LONG_PRESS interval, asynchronouse to InputTypeRelease  */
+    REPEAT = 4; /**< Repeat event, emmited with INPUT_REPEATE_PRESS period after InputTypeLong event */
+}
+
+message SendKeyRequest {
+    Key key = 1;
+    Type type = 2;
+}
