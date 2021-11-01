@@ -54,6 +54,8 @@ message Main {
         StopSession stop_session = 19;
         .PB_Status.PingRequest ping_request = 5;
         .PB_Status.PingResponse ping_response = 6;
+        .PB_Storage.StatRequest storage_stat_request = 24;
+        .PB_Storage.StatResponse storage_stat_response = 25;
         .PB_Storage.ListRequest storage_list_request = 7;
         .PB_Storage.ListResponse storage_list_response = 8;
         .PB_Storage.ReadRequest storage_read_request = 9;

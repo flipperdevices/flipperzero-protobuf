@@ -1,5 +1,6 @@
 PB_Storage.File.name                        type:FT_POINTER
 PB_Storage.File.data                        type:FT_POINTER
+PB_Storage.StatRequest.path                 type:FT_POINTER
 PB_Storage.ListRequest.path                 type:FT_POINTER
 PB_Storage.ReadRequest.path                 type:FT_POINTER
 PB_Storage.WriteRequest.path                type:FT_POINTER
