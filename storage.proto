@@ -14,6 +14,14 @@ message File {
     bytes data = 4;
 }
 
+message StatRequest {
+    string path = 1;
+}
+
+message StatResponse {
+    File file = 1;
+}
+
 message ListRequest {
     string path = 1;
 }
