@@ -70,8 +70,10 @@ message Main {
         .PB_App.LockStatusResponse app_lock_status_response = 18;
         .PB_Gui.StartScreenStreamRequest gui_start_screen_stream_request = 20;
         .PB_Gui.StopScreenStreamRequest gui_stop_screen_stream_request = 21;
-        .PB_Gui.ScreenStreamFrame gui_screen_stream_frame = 22;
+        .PB_Gui.ScreenFrame gui_screen_frame = 22;
         .PB_Gui.SendInputEventRequest gui_send_input_event_request = 23;
+        .PB_Gui.StartVirtualDisplayRequest gui_start_virtual_display_request = 26;
+        .PB_Gui.StopVirtualDisplayRequest gui_stop_virtual_display_request = 27;
     }
 }
 

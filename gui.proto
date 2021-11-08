@@ -20,17 +20,23 @@ enum InputType {
     REPEAT = 4; /**< Repeat event, emmited with INPUT_REPEATE_PRESS period after InputTypeLong event */
 }
 
+message ScreenFrame {
+    bytes data = 1;
+}
+
 message StartScreenStreamRequest {
 }
 
 message StopScreenStreamRequest {
 }
 
-message ScreenStreamFrame {
-    bytes data = 1;
-}
-
 message SendInputEventRequest {
     InputKey key = 1;
     InputType type = 2;
+}
+
+message StartVirtualDisplayRequest {
+}
+
+message StopVirtualDisplayRequest {
 }
