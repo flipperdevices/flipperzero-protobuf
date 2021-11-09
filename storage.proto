@@ -3,59 +3,118 @@ syntax = "proto3";
 package PB_Storage;
 option java_package = "com.flipperdevices.protobuf.storage";
 
+/* File representation in Flipper
+ * All fields are optional (depends by the command)
+ * Can be used as an argument or response */
 message File {
     enum FileType {
         FILE = 0;   // default value
         DIR = 1;
     }
-    FileType type = 1;
-    string name = 2;
-    uint32 size = 3;
-    bytes data = 4;
+    optional FileType type = 1;
+    // File name with extension and without path
+    optional string name = 2;
+    // File size in bytes
+    optional uint32 size = 3;
+    // May contain the contents of a file
+    // Part or all of the content of the file
+    // You can understand it by the 'has_next' flag in the 'Main' wrapper class
+    optional bytes data = 4;
 }
 
+/* Request for meta information about file
+ * Similar with ListRequest, but now we request only one file
+ *
+ * Can return Storage Errors (see flipper.proto file) */
 message StatRequest {
     string path = 1;
 }
 
+/* Response on StatRequest
+ * Return single file without data field
+ * Fields that are present in file: type, name, size */
 message StatResponse {
     File file = 1;
 }
 
+/* Request for a list of files in the directory specified in path.
+ * The / is returned mounted storages
+ * The /any/ and /int/ are always present.
+ * /ext/ is only returned if an sd-card is attached
+ * More info about storage: https://docs.flipperzero.one/ru/development/file-system
+ *
+ * To see if this is the end of the list or not, look at the 'has_hext' flag in the 'Main' wrapper class
+ *
+ * Can return Storage Errors (see flipper.proto file) */
 message ListRequest {
     string path = 1;
 }
 
+/* Response on ListRequest
+ * Return array of files
+ * The data field will be missing in the files
+ * Fields that are present in files: type, name, size */
 message ListResponse {
     repeated File file = 1;
 }
 
+/* Request for read file content
+ *
+ * The only request that returns the data field in the file
+ * Can return Storage Errors (see flipper.proto file) */
 message ReadRequest {
     string path = 1;
 }
 
+/* Response for ReadRequest
+ *
+ * To see if this is the end of the file or not, look at the 'has_hext' flag in the 'Main' wrapper class
+ *
+ * File object NOT includes meta-information about file, only data content */
 message ReadResponse {
     File file = 1;
 }
 
+/* Write request
+ *
+ * You must define 'has_next' if this chunk of file is not last
+ * If path not exist, throw error. You need use 'MkdirRequest' before
+ *
+ * Can return Storage Errors (see flipper.proto file) */
 message WriteRequest {
     string path = 1;
     File file = 2;
 }
 
+/* Request for delete folder or file
+ *
+ * Responds with a 'Empty' response (see flipper.proto) */
 message DeleteRequest {
     string path = 1;
-    bool recursive = 2;
+    optional bool recursive = 2;
 }
 
+/* Request for create directory inside flipper
+ *
+ * Does not create a directory if the parent directory does not exist. Throws an error
+ * Call mkdir on each folder in the path and check with 'ListRequest'/'StatRequest' to see if the folders exist
+ *
+ * Responds with a 'Empty' response (see flipper.proto) */
 message MkdirRequest {
     string path = 1;
 }
-
+/* Request for md5 sum of file
+ *
+ * Created to implement synchronization and understand if the file has changed
+ *
+ * Can return Storage Errors (see flipper.proto file) */
 message Md5sumRequest {
     string path = 1;
 }
 
+/* Response for Md5sumRequest
+ *
+ * Contains md5 of file */
 message Md5sumResponse {
     string md5sum = 1;
 }
