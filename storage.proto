@@ -11,28 +11,32 @@ message File {
         FILE = 0;   // default value
         DIR = 1;
     }
-    optional FileType type = 1;
+    FileType type = 1;
     // File name with extension and without path
-    optional string name = 2;
+    string name = 2;
     // File size in bytes
-    optional uint32 size = 3;
+    uint32 size = 3;
     // May contain the contents of a file
     // Part or all of the content of the file
     // You can understand it by the 'has_next' flag in the 'Main' wrapper class
-    optional bytes data = 4;
+    bytes data = 4;
 }
 
 /* Request for meta information about file
  * Similar with ListRequest, but now we request only one file
  *
- * Can return Storage Errors (see flipper.proto file) */
+ * Can return Storage Errors (see flipper.proto file)
+ *
+ * path is required field */
 message StatRequest {
     string path = 1;
 }
 
 /* Response on StatRequest
  * Return single file without data field
- * Fields that are present in file: type, name, size */
+ * Fields that are present in file: type, name, size
+ *
+ * file is required field */
 message StatResponse {
     File file = 1;
 }
@@ -45,7 +49,9 @@ message StatResponse {
  *
  * To see if this is the end of the list or not, look at the 'has_hext' flag in the 'Main' wrapper class
  *
- * Can return Storage Errors (see flipper.proto file) */
+ * Can return Storage Errors (see flipper.proto file)
+ *
+ * path is required field */
 message ListRequest {
     string path = 1;
 }
@@ -53,7 +59,9 @@ message ListRequest {
 /* Response on ListRequest
  * Return array of files
  * The data field will be missing in the files
- * Fields that are present in files: type, name, size */
+ * Fields that are present in files: type, name, size
+ *
+ * file is required field */
 message ListResponse {
     repeated File file = 1;
 }
@@ -61,7 +69,9 @@ message ListResponse {
 /* Request for read file content
  *
  * The only request that returns the data field in the file
- * Can return Storage Errors (see flipper.proto file) */
+ * Can return Storage Errors (see flipper.proto file)
+ *
+ * path is required field */
 message ReadRequest {
     string path = 1;
 }
@@ -70,7 +80,9 @@ message ReadRequest {
  *
  * To see if this is the end of the file or not, look at the 'has_hext' flag in the 'Main' wrapper class
  *
- * File object NOT includes meta-information about file, only data content */
+ * File object NOT includes meta-information about file, only data content
+ *
+ * file is required field */
 message ReadResponse {
     File file = 1;
 }
@@ -80,7 +92,10 @@ message ReadResponse {
  * You must define 'has_next' if this chunk of file is not last
  * If path not exist, throw error. You need use 'MkdirRequest' before
  *
- * Can return Storage Errors (see flipper.proto file) */
+ * Can return Storage Errors (see flipper.proto file)
+ *
+ * path is required field
+ * file is required field */
 message WriteRequest {
     string path = 1;
     File file = 2;
@@ -88,10 +103,13 @@ message WriteRequest {
 
 /* Request for delete folder or file
  *
- * Responds with a 'Empty' response (see flipper.proto) */
+ * Responds with a 'Empty' response (see flipper.proto)
+ *
+ * path is required field
+ * recursive is optional field, default is 'false' */
 message DeleteRequest {
     string path = 1;
-    optional bool recursive = 2;
+    bool recursive = 2;
 }
 
 /* Request for create directory inside flipper
@@ -99,7 +117,9 @@ message DeleteRequest {
  * Does not create a directory if the parent directory does not exist. Throws an error
  * Call mkdir on each folder in the path and check with 'ListRequest'/'StatRequest' to see if the folders exist
  *
- * Responds with a 'Empty' response (see flipper.proto) */
+ * Responds with a 'Empty' response (see flipper.proto)
+ *
+ * path is required field */
 message MkdirRequest {
     string path = 1;
 }
@@ -107,14 +127,18 @@ message MkdirRequest {
  *
  * Created to implement synchronization and understand if the file has changed
  *
- * Can return Storage Errors (see flipper.proto file) */
+ * Can return Storage Errors (see flipper.proto file)
+ *
+ * path is required field */
 message Md5sumRequest {
     string path = 1;
 }
 
 /* Response for Md5sumRequest
  *
- * Contains md5 of file */
+ * Contains md5 of file
+ *
+ * md5sum is required field */
 message Md5sumResponse {
     string md5sum = 1;
 }
