@@ -33,6 +33,10 @@ enum CommandStatus {
     /**< Application Errors */
     ERROR_APP_CANT_START = 16; /**< Can't start app - internal error */
     ERROR_APP_SYSTEM_LOCKED = 17; /**< Another app is running */
+
+    /**< Virtual Display Errors */
+    ERROR_VIRTUAL_DISPLAY_ALREADY_STARTED = 19; /**< Virtual Display session can't be started twice */
+    ERROR_VIRTUAL_DISPLAY_NOT_STARTED = 20; /**< Virtual Display session can't be stopped when it's not started */
 }
 
 /* There are Server commands (e.g. Storage_write), which have no body message
@@ -70,8 +74,10 @@ message Main {
         .PB_App.LockStatusResponse app_lock_status_response = 18;
         .PB_Gui.StartScreenStreamRequest gui_start_screen_stream_request = 20;
         .PB_Gui.StopScreenStreamRequest gui_stop_screen_stream_request = 21;
-        .PB_Gui.ScreenStreamFrame gui_screen_stream_frame = 22;
+        .PB_Gui.ScreenFrame gui_screen_frame = 22;
         .PB_Gui.SendInputEventRequest gui_send_input_event_request = 23;
+        .PB_Gui.StartVirtualDisplayRequest gui_start_virtual_display_request = 26;
+        .PB_Gui.StopVirtualDisplayRequest gui_stop_virtual_display_request = 27;
     }
 }
 
