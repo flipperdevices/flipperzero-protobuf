@@ -33,6 +33,10 @@ enum CommandStatus {
     /**< Application Errors */
     ERROR_APP_CANT_START = 16; /**< Can't start app - internal error */
     ERROR_APP_SYSTEM_LOCKED = 17; /**< Another app is running */
+
+    /**< Virtual Display Errors */
+    ERROR_VIRTUAL_DISPLAY_ALREADY_STARTED = 19; /**< Virtual Display session can't be started twice */
+    ERROR_VIRTUAL_DISPLAY_NOT_STARTED = 20; /**< Virtual Display session can't be stopped when it's not started */
 }
 
 /* There are Server commands (e.g. Storage_write), which have no body message
