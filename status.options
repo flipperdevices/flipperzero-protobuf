@@ -1,0 +1,5 @@
+PB_Status.PingRequest.data              type:FT_POINTER
+PB_Status.PingRequest.data              max_size:1024
+PB_Status.PingResponse.data             type:FT_POINTER
+PB_Status.PingResponse.data             max_size:1024
+
