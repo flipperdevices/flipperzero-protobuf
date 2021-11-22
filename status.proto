@@ -4,8 +4,10 @@ package PB_Status;
 option java_package = "com.flipperdevices.protobuf.status";
 
 message PingRequest {
+    bytes data = 1;
 }
 
 message PingResponse {
+    bytes data = 1;
 }
 
