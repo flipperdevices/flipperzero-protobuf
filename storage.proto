@@ -69,3 +69,7 @@ message Md5sumResponse {
     string md5sum = 1;
 }
 
+message RenameRequest {
+    string old_path = 1;
+    string new_path = 2;
+}

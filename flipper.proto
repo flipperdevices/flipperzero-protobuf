@@ -71,6 +71,7 @@ message Main {
         .PB_Storage.MkdirRequest storage_mkdir_request = 13;
         .PB_Storage.Md5sumRequest storage_md5sum_request = 14;
         .PB_Storage.Md5sumResponse storage_md5sum_response = 15;
+        .PB_Storage.RenameRequest storage_rename_request = 30;
         .PB_App.StartRequest app_start_request = 16;
         .PB_App.LockStatusRequest app_lock_status_request = 17;
         .PB_App.LockStatusResponse app_lock_status_response = 18;

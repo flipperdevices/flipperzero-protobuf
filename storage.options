@@ -6,9 +6,10 @@ PB_Storage.ListRequest.path                 type:FT_POINTER
 PB_Storage.ReadRequest.path                 type:FT_POINTER
 PB_Storage.WriteRequest.path                type:FT_POINTER
 PB_Storage.DeleteRequest.path               type:FT_POINTER
-
 PB_Storage.MkdirRequest.path                type:FT_POINTER
 PB_Storage.Md5sumRequest.path               type:FT_POINTER
+PB_Storage.RenameRequest.old_path           type:FT_POINTER
+PB_Storage.RenameRequest.new_path           type:FT_POINTER
 
 PB_Storage.ListResponse.file                max_count:8
 
