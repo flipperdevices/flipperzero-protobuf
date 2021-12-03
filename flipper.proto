@@ -56,8 +56,9 @@ message Main {
     oneof content {
         Empty empty = 4;
         StopSession stop_session = 19;
-        .PB_System.PingRequest ping_request = 5;
-        .PB_System.PingResponse ping_response = 6;
+        .PB_System.PingRequest system_ping_request = 5;
+        .PB_System.PingResponse system_ping_response = 6;
+        .PB_System.RebootRequest system_reboot_request = 31;
         .PB_Storage.InfoRequest storage_info_request = 28;
         .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;

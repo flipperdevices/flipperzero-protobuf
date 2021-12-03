@@ -11,3 +11,10 @@ message PingResponse {
     bytes data = 1;
 }
 
+message RebootRequest {
+    enum RebootMode {
+        OS = 0;   // default value
+        DFU = 1;
+    }
+    RebootMode mode = 1;
+}
