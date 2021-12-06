@@ -14,6 +14,15 @@ message File {
     bytes data = 4;
 }
 
+message InfoRequest {
+    string path = 1;
+}
+
+message InfoResponse {
+    uint64 total_space = 1;
+    uint64 free_space = 2;
+}
+
 message StatRequest {
     string path = 1;
 }
@@ -60,3 +69,7 @@ message Md5sumResponse {
     string md5sum = 1;
 }
 
+message RenameRequest {
+    string old_path = 1;
+    string new_path = 2;
+}

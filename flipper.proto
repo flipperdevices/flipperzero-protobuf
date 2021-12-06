@@ -1,6 +1,6 @@
 syntax = "proto3";
 import "storage.proto";
-import "status.proto";
+import "system.proto";
 import "application.proto";
 import "gui.proto";
 
@@ -56,8 +56,13 @@ message Main {
     oneof content {
         Empty empty = 4;
         StopSession stop_session = 19;
-        .PB_Status.PingRequest ping_request = 5;
-        .PB_Status.PingResponse ping_response = 6;
+        .PB_System.PingRequest system_ping_request = 5;
+        .PB_System.PingResponse system_ping_response = 6;
+        .PB_System.RebootRequest system_reboot_request = 31;
+        .PB_System.DeviceInfoRequest system_device_info_request = 32;
+        .PB_System.DeviceInfoResponse system_device_info_response = 33;
+        .PB_Storage.InfoRequest storage_info_request = 28;
+        .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;
         .PB_Storage.StatResponse storage_stat_response = 25;
         .PB_Storage.ListRequest storage_list_request = 7;
@@ -69,6 +74,7 @@ message Main {
         .PB_Storage.MkdirRequest storage_mkdir_request = 13;
         .PB_Storage.Md5sumRequest storage_md5sum_request = 14;
         .PB_Storage.Md5sumResponse storage_md5sum_response = 15;
+        .PB_Storage.RenameRequest storage_rename_request = 30;
         .PB_App.StartRequest app_start_request = 16;
         .PB_App.LockStatusRequest app_lock_status_request = 17;
         .PB_App.LockStatusResponse app_lock_status_response = 18;

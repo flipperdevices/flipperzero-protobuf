@@ -1,0 +1,7 @@
+PB_System.PingRequest.data              type:FT_POINTER
+PB_System.PingRequest.data              max_size:1024
+PB_System.PingResponse.data             type:FT_POINTER
+PB_System.PingResponse.data             max_size:1024
+PB_System.DeviceInfoResponse.key        type:FT_POINTER
+PB_System.DeviceInfoResponse.value      type:FT_POINTER
+
