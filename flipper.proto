@@ -59,6 +59,8 @@ message Main {
         .PB_System.PingRequest system_ping_request = 5;
         .PB_System.PingResponse system_ping_response = 6;
         .PB_System.RebootRequest system_reboot_request = 31;
+        .PB_System.DeviceInfoRequest system_device_info_request = 32;
+        .PB_System.DeviceInfoResponse system_device_info_response = 33;
         .PB_Storage.InfoRequest storage_info_request = 28;
         .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;

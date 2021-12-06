@@ -18,3 +18,11 @@ message RebootRequest {
     }
     RebootMode mode = 1;
 }
+
+message DeviceInfoRequest {
+}
+
+message DeviceInfoResponse {
+    string key = 1;
+    string value = 2;
+}
