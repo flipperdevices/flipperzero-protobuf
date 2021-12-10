@@ -61,6 +61,7 @@ message Main {
         .PB_System.RebootRequest system_reboot_request = 31;
         .PB_System.DeviceInfoRequest system_device_info_request = 32;
         .PB_System.DeviceInfoResponse system_device_info_response = 33;
+        .PB_System.FactoryResetRequest system_factory_reset_request = 34;
         .PB_Storage.InfoRequest storage_info_request = 28;
         .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;
