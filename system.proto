@@ -26,3 +26,6 @@ message DeviceInfoResponse {
     string key = 1;
     string value = 2;
 }
+
+message FactoryResetRequest {
+}
