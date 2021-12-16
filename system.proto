@@ -50,5 +50,5 @@ message DateTime {
     uint32 day = 4;     /**< Current day: 1-31 */
     uint32 month = 5;   /**< Current month: 1-12 */
     uint32 year = 6;    /**< Current year: 2000-2099 */
-    uint32 weekday = 7; /**< Current weekday: 1-7, readonly */
+    uint32 weekday = 7; /**< Current weekday: 1-7 */
 }
