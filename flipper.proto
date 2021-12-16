@@ -62,6 +62,9 @@ message Main {
         .PB_System.DeviceInfoRequest system_device_info_request = 32;
         .PB_System.DeviceInfoResponse system_device_info_response = 33;
         .PB_System.FactoryResetRequest system_factory_reset_request = 34;
+        .PB_System.GetDateTimeRequest system_get_datetime_request = 35;
+        .PB_System.GetDateTimeResponse system_get_datetime_response = 36;
+        .PB_System.SetDateTimeRequest system_set_datetime_request = 37;
         .PB_Storage.InfoRequest storage_info_request = 28;
         .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;
