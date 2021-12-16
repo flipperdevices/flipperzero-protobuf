@@ -36,6 +36,7 @@ message SendInputEventRequest {
 }
 
 message StartVirtualDisplayRequest {
+    ScreenFrame first_frame = 1; // optional
 }
 
 message StopVirtualDisplayRequest {
