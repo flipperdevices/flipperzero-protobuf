@@ -52,3 +52,6 @@ message DateTime {
     uint32 year = 6;    /**< Current year: 2000-2099 */
     uint32 weekday = 7; /**< Current weekday: 1-7 */
 }
+
+message PlayAudiovisualAlertRequest {
+}
