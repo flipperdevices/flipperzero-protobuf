@@ -65,6 +65,7 @@ message Main {
         .PB_System.GetDateTimeRequest system_get_datetime_request = 35;
         .PB_System.GetDateTimeResponse system_get_datetime_response = 36;
         .PB_System.SetDateTimeRequest system_set_datetime_request = 37;
+        .PB_System.PlayAudiovisualAlertRequest system_play_audiovisual_alert_request = 38;
         .PB_Storage.InfoRequest storage_info_request = 28;
         .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;
