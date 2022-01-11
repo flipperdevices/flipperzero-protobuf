@@ -55,3 +55,12 @@ message DateTime {
 
 message PlayAudiovisualAlertRequest {
 }
+
+message ProtobufVersionRequest {
+}
+
+message ProtobufVersionResponse {
+    uint32 major = 1;
+    uint32 minor = 2;
+}
+
