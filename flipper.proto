@@ -49,6 +49,9 @@ message Empty {
 message StopSession {
 }
 
+message SessionStopped {
+}
+
 message Main {
     uint32 command_id = 1;
     CommandStatus command_status = 2;
@@ -56,6 +59,7 @@ message Main {
     oneof content {
         Empty empty = 4;
         StopSession stop_session = 19;
+        SessionStopped session_stopped = 41;
         .PB_System.PingRequest system_ping_request = 5;
         .PB_System.PingResponse system_ping_response = 6;
         .PB_System.RebootRequest system_reboot_request = 31;
