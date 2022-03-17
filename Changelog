@@ -1,0 +1,23 @@
+# Changelog
+
+## [0.2]
+### Added
+- System messages: ProtobufVersion
+- Support parallel RPC sessions
+- Screen streaming optimization
+
+## [0.1]
+### Added
+- Code owners
+- CI setup
+- System messages: Ping, Reboot, DeviceInfo, FactoryReset, DateTime,
+                   AudiovisualAlert
+- Storage messages: Info, Stat, Read, Write, Delete, Mkdir, Md5sum,
+                    Rename
+- App messages: Start, LockStatus
+- Gui messages: ScreenStream, ScreenFrame, SendInput, VirtualDisplay
+
+## [0.0]
+### Added
+- Introduced Flipper Zero Protobuf repository
+- StorageList messages
