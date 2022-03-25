@@ -3,7 +3,8 @@
 
 ## [0.3]
 ### Added
-- System messages: UpdateRequest, BackupCreateRequest, BackupRestoreRequest
+- System message: UpdateRequest
+- Storage messages: BackupCreateRequest, BackupRestoreRequest
 
 ## [0.2]
 ### Added
