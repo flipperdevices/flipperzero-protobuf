@@ -64,3 +64,14 @@ message ProtobufVersionResponse {
     uint32 minor = 2;
 }
 
+message UpdateRequest {
+    string update_folder = 1;
+}
+
+message BackupCreateRequest {
+    string archive_path = 1;
+}
+
+message BackupRestoreRequest {
+    string archive_path = 1;
+}

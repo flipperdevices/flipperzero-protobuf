@@ -1,5 +1,10 @@
 # Changelog
 
+
+## [0.3]
+### Added
+- System messages: UpdateRequest, BackupCreateRequest, BackupRestoreRequest
+
 ## [0.2]
 ### Added
 - System messages: ProtobufVersion
