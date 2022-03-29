@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3]
+### Fixed
+- BLE disconnection after writing / erasing FLASH
+
 ## [0.2]
 ### Added
 - System messages: ProtobufVersion
