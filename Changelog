@@ -1,10 +1,13 @@
 # Changelog
 
-
-## [0.3]
+## [0.4]
 ### Added
 - System message: UpdateRequest
 - Storage messages: BackupCreateRequest, BackupRestoreRequest
+
+## [0.3]
+### Fixed
+- BLE disconnection after writing / erasing FLASH
 
 ## [0.2]
 ### Added
