@@ -64,3 +64,6 @@ message ProtobufVersionResponse {
     uint32 minor = 2;
 }
 
+message UpdateRequest {
+    string update_folder = 1;
+}

@@ -68,6 +68,7 @@ message Main {
         .PB_System.PlayAudiovisualAlertRequest system_play_audiovisual_alert_request = 38;
         .PB_System.ProtobufVersionRequest system_protobuf_version_request = 39;
         .PB_System.ProtobufVersionResponse system_protobuf_version_response = 40;
+        .PB_System.UpdateRequest system_update_request = 41;
         .PB_Storage.InfoRequest storage_info_request = 28;
         .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;
@@ -82,6 +83,8 @@ message Main {
         .PB_Storage.Md5sumRequest storage_md5sum_request = 14;
         .PB_Storage.Md5sumResponse storage_md5sum_response = 15;
         .PB_Storage.RenameRequest storage_rename_request = 30;
+        .PB_Storage.BackupCreateRequest storage_backup_create_request = 42;
+        .PB_Storage.BackupRestoreRequest storage_backup_restore_request = 43;
         .PB_App.StartRequest app_start_request = 16;
         .PB_App.LockStatusRequest app_lock_status_request = 17;
         .PB_App.LockStatusResponse app_lock_status_response = 18;
