@@ -67,3 +67,28 @@ message ProtobufVersionResponse {
 message UpdateRequest {
     string update_folder = 1;
 }
+
+message PowerInfoRequest {
+}
+
+message PowerInfoResponse {
+    enum ChargeState {
+        DISCHARGING = 0;
+        CHARGING = 1;
+        CHARGED = 2;
+    }
+    uint32 charge_level = 1; /**< Charge level in % */
+
+    ChargeState charge_state = 2;
+
+    uint32 battery_volatge = 3; /**< Battery voltage in mV */
+    uint32 battery_current = 4; /**< Battery current in mA */
+
+    int32 gauge_temp = 5; /**< Battery gauge temperature in C */
+
+    uint32 battery_health = 6; /**< Battery health level in % */
+
+    uint32 capacity_remain = 7; /**< Remaining battery capacity in mAh */
+    uint32 capacity_full = 8; /**< Full charge capacity in mAh */
+    uint32 capacity_design = 9; /**< Designed battery capacity in mAh */
+}
