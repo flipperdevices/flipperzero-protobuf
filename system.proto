@@ -67,3 +67,11 @@ message ProtobufVersionResponse {
 message UpdateRequest {
     string update_folder = 1;
 }
+
+message PowerInfoRequest {
+}
+
+message PowerInfoResponse {
+    string key = 1;
+    string value = 2;
+}

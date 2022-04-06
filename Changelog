@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5]
+### Added
+- System message: PowerInfo
+
 ## [0.4]
 ### Added
 - System message: UpdateRequest
