@@ -74,3 +74,11 @@ message RenameRequest {
     string old_path = 1;
     string new_path = 2;
 }
+
+message BackupCreateRequest {
+    string archive_path = 1;
+}
+
+message BackupRestoreRequest {
+    string archive_path = 1;
+}
