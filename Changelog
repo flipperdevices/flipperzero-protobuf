@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6]
+### Added
+- System message: RebootRequest: added UPDATE restart mode
+### Fixed
+- System message: UpdateRequest: renamed manifest field
+
 ## [0.5]
 ### Added
 - System message: PowerInfo

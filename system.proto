@@ -15,6 +15,7 @@ message RebootRequest {
     enum RebootMode {
         OS = 0;   // default value
         DFU = 1;
+        UPDATE = 2;
     }
     RebootMode mode = 1;
 }
@@ -65,7 +66,7 @@ message ProtobufVersionResponse {
 }
 
 message UpdateRequest {
-    string update_folder = 1;
+    string update_manifest = 1;
 }
 
 message PowerInfoRequest {
