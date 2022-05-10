@@ -69,6 +69,7 @@ message Main {
         .PB_System.ProtobufVersionRequest system_protobuf_version_request = 39;
         .PB_System.ProtobufVersionResponse system_protobuf_version_response = 40;
         .PB_System.UpdateRequest system_update_request = 41;
+        .PB_System.UpdateResponse system_update_response = 46;
         .PB_System.PowerInfoRequest system_power_info_request = 44;
         .PB_System.PowerInfoResponse system_power_info_response = 45;
         .PB_Storage.InfoRequest storage_info_request = 28;

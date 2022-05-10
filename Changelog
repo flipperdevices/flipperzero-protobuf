@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.7]
+### Added
+- System message: UpdateResponse: passing update preparation detailed status
+
 ## [0.6]
 ### Added
 - System message: RebootRequest: added UPDATE restart mode

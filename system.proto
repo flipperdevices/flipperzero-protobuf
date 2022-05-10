@@ -69,6 +69,20 @@ message UpdateRequest {
     string update_manifest = 1;
 }
 
+message UpdateResponse {
+    enum UpdateResultCode {
+        OK = 0;
+        ManifestPathInvalid = 1;
+        ManifestFolderNotFound = 2;
+        ManifestInvalid = 3;
+        StageMissing = 4;
+        StageIntegrityError = 5;
+        ManifestPointerError = 6;
+        TargetMismatch = 7;
+    }
+    UpdateResultCode code = 1;
+}
+
 message PowerInfoRequest {
 }
 
