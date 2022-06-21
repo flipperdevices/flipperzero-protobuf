@@ -33,6 +33,8 @@ enum CommandStatus {
     /**< Application Errors */
     ERROR_APP_CANT_START = 16; /**< Can't start app - internal error */
     ERROR_APP_SYSTEM_LOCKED = 17; /**< Another app is running */
+    ERROR_APP_NOT_RUNNING = 21; /**< App is not running or doesn't support RPC commands */
+    ERROR_APP_CMD_ERROR = 22; /**< Command execution error */
 
     /**< Virtual Display Errors */
     ERROR_VIRTUAL_DISPLAY_ALREADY_STARTED = 19; /**< Virtual Display session can't be started twice */
@@ -91,6 +93,10 @@ message Main {
         .PB_App.StartRequest app_start_request = 16;
         .PB_App.LockStatusRequest app_lock_status_request = 17;
         .PB_App.LockStatusResponse app_lock_status_response = 18;
+        .PB_App.AppExitRequest app_exit_request = 47;
+        .PB_App.AppLoadFileRequest app_load_file_request = 48;
+        .PB_App.AppButtonPressRequest app_button_press_request = 49;
+        .PB_App.AppButtonReleaseRequest app_button_release_request = 50;
         .PB_Gui.StartScreenStreamRequest gui_start_screen_stream_request = 20;
         .PB_Gui.StopScreenStreamRequest gui_stop_screen_stream_request = 21;
         .PB_Gui.ScreenFrame gui_screen_frame = 22;
