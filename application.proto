@@ -15,3 +15,17 @@ message LockStatusResponse {
     bool locked = 1;
 }
 
+message AppExitRequest {
+}
+
+message AppLoadFileRequest {
+    string path = 1;
+}
+
+message AppButtonPressRequest {
+    string args = 1;
+}
+
+message AppButtonReleaseRequest {
+}
+
