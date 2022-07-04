@@ -108,13 +108,13 @@ message Main {
         .PB_Gui.SendInputEventRequest gui_send_input_event_request = 23;
         .PB_Gui.StartVirtualDisplayRequest gui_start_virtual_display_request = 26;
         .PB_Gui.StopVirtualDisplayRequest gui_stop_virtual_display_request = 27;
-        .PB_Gpio.SetPinMode gpio_set_pin_mode = 50;
-        .PB_Gpio.SetInputPull gpio_set_input_pull = 51;
-        .PB_Gpio.GetPinMode gpio_get_pin_mode = 52;
-        .PB_Gpio.GetPinModeResponse gpio_get_pin_mode_response = 53;
-        .PB_Gpio.ReadPin gpio_read_pin = 54;
-        .PB_Gpio.ReadPinResponse gpio_read_pin_response = 55;
-        .PB_Gpio.WritePin gpio_write_pin = 56;
+        .PB_Gpio.SetPinMode gpio_set_pin_mode = 51;
+        .PB_Gpio.SetInputPull gpio_set_input_pull = 52;
+        .PB_Gpio.GetPinMode gpio_get_pin_mode = 53;
+        .PB_Gpio.GetPinModeResponse gpio_get_pin_mode_response = 54;
+        .PB_Gpio.ReadPin gpio_read_pin = 55;
+        .PB_Gpio.ReadPinResponse gpio_read_pin_response = 56;
+        .PB_Gpio.WritePin gpio_write_pin = 57;
     }
 }
 
