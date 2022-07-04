@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.9]
+### Added
+- System message: UpdateResponse, enum UpdateResultCode: new entries 
+    OutdatedManifestVersion, IntFull, UnspecifiedError
+
 ## [0.8]
 ### Added
 - App messages: AppExitRequest, AppLoadFileRequest, AppButtonPressRequest, AppButtonReleaseRequest

@@ -79,6 +79,9 @@ message UpdateResponse {
         StageIntegrityError = 5;
         ManifestPointerError = 6;
         TargetMismatch = 7;
+        OutdatedManifestVersion = 8;
+        IntFull = 9;
+        UnspecifiedError = 10;
     }
     UpdateResultCode code = 1;
 }
