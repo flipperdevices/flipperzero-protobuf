@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.9]
+### Added
+- System message: UpdateResponse, enum UpdateResultCode: new entries 
+    OutdatedManifestVersion, IntFull, UnspecifiedError
+
+## [0.8]
+### Added
+- App messages: AppExitRequest, AppLoadFileRequest, AppButtonPressRequest, AppButtonReleaseRequest
+
 ## [0.7]
 ### Added
 - System message: UpdateResponse: passing update preparation detailed status
