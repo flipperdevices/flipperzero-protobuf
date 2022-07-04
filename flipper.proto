@@ -3,6 +3,7 @@ import "storage.proto";
 import "system.proto";
 import "application.proto";
 import "gui.proto";
+import "gpio.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
@@ -39,6 +40,10 @@ enum CommandStatus {
     /**< Virtual Display Errors */
     ERROR_VIRTUAL_DISPLAY_ALREADY_STARTED = 19; /**< Virtual Display session can't be started twice */
     ERROR_VIRTUAL_DISPLAY_NOT_STARTED = 20; /**< Virtual Display session can't be stopped when it's not started */
+
+    /**< GPIO Errors */
+    ERROR_GPIO_MODE_INCORRECT = 58;
+    ERROR_GPIO_UNKNOWN_PIN_MODE = 59;
 }
 
 /* There are Server commands (e.g. Storage_write), which have no body message
@@ -103,6 +108,13 @@ message Main {
         .PB_Gui.SendInputEventRequest gui_send_input_event_request = 23;
         .PB_Gui.StartVirtualDisplayRequest gui_start_virtual_display_request = 26;
         .PB_Gui.StopVirtualDisplayRequest gui_stop_virtual_display_request = 27;
+        .PB_Gpio.SetPinMode gpio_set_pin_mode = 50;
+        .PB_Gpio.SetInputPull gpio_set_input_pull = 51;
+        .PB_Gpio.GetPinMode gpio_get_pin_mode = 52;
+        .PB_Gpio.GetPinModeResponse gpio_get_pin_mode_response = 53;
+        .PB_Gpio.ReadPin gpio_read_pin = 54;
+        .PB_Gpio.ReadPinResponse gpio_read_pin_response = 55;
+        .PB_Gpio.WritePin gpio_write_pin = 56;
     }
 }
 

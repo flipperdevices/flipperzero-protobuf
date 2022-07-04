@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.10]
+### Added
+- GPIO message: SetPinMode, SetInputPull, GetPinMode, GetPinModeResponse, ReadPin, ReadPinResponse, WritePin
+
 ## [0.9]
 ### Added
 - System message: UpdateResponse, enum UpdateResultCode: new entries 
