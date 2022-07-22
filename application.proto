@@ -29,3 +29,11 @@ message AppButtonPressRequest {
 message AppButtonReleaseRequest {
 }
 
+enum AppState {
+    APP_CLOSED = 0;
+    APP_STARTED = 1;
+};
+
+message AppStateResponse {
+    AppState state = 1;
+}

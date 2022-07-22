@@ -115,6 +115,7 @@ message Main {
         .PB_Gpio.ReadPin gpio_read_pin = 55;
         .PB_Gpio.ReadPinResponse gpio_read_pin_response = 56;
         .PB_Gpio.WritePin gpio_write_pin = 57;
+        .PB_App.AppStateResponse app_state_response = 58;
     }
 }
 
