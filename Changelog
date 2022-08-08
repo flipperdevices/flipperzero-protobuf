@@ -1,5 +1,10 @@
 # Changelog
 
+
+## [0.12]
+### Added
+- Region message 
+
 ## [0.11]
 ### Added
 - App messages: AppStateResponse
