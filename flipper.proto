@@ -79,6 +79,8 @@ message Main {
         .PB_System.UpdateResponse system_update_response = 46;
         .PB_System.PowerInfoRequest system_power_info_request = 44;
         .PB_System.PowerInfoResponse system_power_info_response = 45;
+        .PB_System.PowerDebugRequest system_power_debug_request = 59;
+        .PB_System.PowerDebugResponse system_power_debug_response = 60;
         .PB_Storage.InfoRequest storage_info_request = 28;
         .PB_Storage.InfoResponse storage_info_response = 29;
         .PB_Storage.StatRequest storage_stat_request = 24;

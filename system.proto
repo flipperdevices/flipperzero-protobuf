@@ -93,3 +93,11 @@ message PowerInfoResponse {
     string key = 1;
     string value = 2;
 }
+
+message PowerDebugRequest {
+}
+
+message PowerDebugResponse {
+    string key = 1;
+    string value = 2;
+}
