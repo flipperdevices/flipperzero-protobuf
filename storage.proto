@@ -23,6 +23,14 @@ message InfoResponse {
     uint64 free_space = 2;
 }
 
+message TimestampRequest {
+    string path = 1;
+}
+
+message TimestampResponse {
+    uint32 timestamp = 1;
+}
+
 message StatRequest {
     string path = 1;
 }
