@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.14]
+### Added
+- New subsystem: Property
+- Property: Get
+
 ## [0.13]
 ### Added
 - Storage: timestamp
