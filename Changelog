@@ -3,7 +3,8 @@
 ## [0.14]
 ### Added
 - New subsystem: Property
-- Property: Get
+- Property messages: GetRequest, GetResponse
+- App messages: GetErrorRequest, GetErrorResponse, DataExchangeRequest
 
 ## [0.13]
 ### Added
