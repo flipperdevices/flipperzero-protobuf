@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.14]
+### Added
+- New subsystem: Property
+- Property messages: GetRequest, GetResponse
+- App messages: GetErrorRequest, GetErrorResponse, DataExchangeRequest
+
 ## [0.13]
 ### Added
 - Storage: timestamp

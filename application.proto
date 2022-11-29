@@ -37,3 +37,16 @@ enum AppState {
 message AppStateResponse {
     AppState state = 1;
 }
+
+message GetErrorRequest {
+}
+
+message GetErrorResponse {
+    uint32 code = 1;
+    string text = 2;
+}
+
+message DataExchangeRequest {
+    bytes data = 1;
+}
+

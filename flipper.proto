@@ -4,6 +4,7 @@ import "system.proto";
 import "application.proto";
 import "gui.proto";
 import "gpio.proto";
+import "property.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
@@ -104,6 +105,9 @@ message Main {
         .PB_App.AppLoadFileRequest app_load_file_request = 48;
         .PB_App.AppButtonPressRequest app_button_press_request = 49;
         .PB_App.AppButtonReleaseRequest app_button_release_request = 50;
+        .PB_App.GetErrorRequest app_get_error_request = 63;
+        .PB_App.GetErrorResponse app_get_error_response = 64;
+        .PB_App.DataExchangeRequest app_data_exchange_request = 65;
         .PB_Gui.StartScreenStreamRequest gui_start_screen_stream_request = 20;
         .PB_Gui.StopScreenStreamRequest gui_stop_screen_stream_request = 21;
         .PB_Gui.ScreenFrame gui_screen_frame = 22;
@@ -118,6 +122,8 @@ message Main {
         .PB_Gpio.ReadPinResponse gpio_read_pin_response = 56;
         .PB_Gpio.WritePin gpio_write_pin = 57;
         .PB_App.AppStateResponse app_state_response = 58;
+        .PB_Property.GetRequest property_get_request = 61;
+        .PB_Property.GetResponse property_get_response = 62;
     }
 }
 
