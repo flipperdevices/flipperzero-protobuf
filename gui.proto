@@ -20,8 +20,16 @@ enum InputType {
     REPEAT = 4; /**< Repeat event, emmited with INPUT_REPEATE_PRESS period after InputTypeLong event */
 }
 
+enum ScreenOrientation {
+    HORIZONTAL = 0; /**< Horizontal */
+    HORIZONTAL_FLIP = 1; /**< Horizontal flipped (180)*/
+    VERTICAL = 2; /**< Vertical (90)*/
+    VERTICAL_FLIP = 3; /**< Vertical flipped */
+}
+
 message ScreenFrame {
     bytes data = 1;
+    ScreenOrientation orientation = 2;
 }
 
 message StartScreenStreamRequest {

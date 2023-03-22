@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.15]
+### Modified
+- ScreenFrame: additional orientation field
+
 ## [0.14]
 ### Added
 - New subsystem: Property
