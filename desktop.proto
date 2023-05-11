@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package PB_Desktop;
+option java_package = "com.flipperdevices.protobuf.desktop";
+
+message IsLockedRequest {
+}
+
+message UnlockRequest {
+}
