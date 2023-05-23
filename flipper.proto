@@ -127,6 +127,9 @@ message Main {
         .PB_Property.GetResponse property_get_response = 62;
         .PB_Desktop.IsLockedRequest desktop_is_locked_request = 66;
         .PB_Desktop.UnlockRequest desktop_unlock_request = 67;
+        .PB_Desktop.StatusSubscribeRequest desktop_status_subscribe_request = 68;
+        .PB_Desktop.StatusUnsubscribeRequest desktop_status_unsubscribe_request = 69;
+        .PB_Desktop.Status desktop_status = 70;
     }
 }
 
