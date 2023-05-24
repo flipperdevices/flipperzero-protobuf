@@ -3,11 +3,6 @@ syntax = "proto3";
 package PB_Desktop;
 option java_package = "com.flipperdevices.protobuf.desktop";
 
-enum StatusCode {
-    LOCKED = 0;
-    UNLOCKED = 1;
-}
-
 message IsLockedRequest {
 }
 
@@ -21,5 +16,5 @@ message StatusUnsubscribeRequest {
 }
 
 message Status {
-    StatusCode code = 1;
+    bool locked = 1;
 }
