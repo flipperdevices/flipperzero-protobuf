@@ -8,3 +8,13 @@ message IsLockedRequest {
 
 message UnlockRequest {
 }
+
+message StatusSubscribeRequest {
+}
+
+message StatusUnsubscribeRequest {
+}
+
+message Status {
+    bool locked = 1;
+}

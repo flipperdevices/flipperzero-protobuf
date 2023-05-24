@@ -1,8 +1,12 @@
 # Changelog
 
+## [0.17]
+### Added
+- Desktop service subscription API
+
 ## [0.16]
 ### Added
-- Desktop service api
+- Desktop service API
 
 ## [0.15]
 ### Modified
