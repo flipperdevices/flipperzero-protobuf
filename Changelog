@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.18]
+### Added
+- Loader is now able to load apps from SD card
+
 ## [0.17]
 ### Added
 - Desktop service subscription API
