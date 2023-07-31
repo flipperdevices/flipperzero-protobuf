@@ -12,6 +12,7 @@ message File {
     string name = 2;
     uint32 size = 3;
     bytes data = 4;
+    string md5sum = 5;
 }
 
 message InfoRequest {
@@ -41,6 +42,7 @@ message StatResponse {
 
 message ListRequest {
     string path = 1;
+    bool include_md5 = 2;
 }
 
 message ListResponse {
