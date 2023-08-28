@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.20]
+### Added
+- Storage ListRequest message now has a file size filter.
+
 ## [0.19]
 ### Added
 - Storage ListRequest message now supports md5sum calculation for each file
