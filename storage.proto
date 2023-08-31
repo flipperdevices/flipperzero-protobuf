@@ -43,6 +43,7 @@ message StatResponse {
 message ListRequest {
     string path = 1;
     bool include_md5 = 2;
+    uint32 filter_max_size = 3;
 }
 
 message ListResponse {
