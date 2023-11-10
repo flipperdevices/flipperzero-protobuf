@@ -24,6 +24,7 @@ message AppLoadFileRequest {
 
 message AppButtonPressRequest {
     string args = 1;
+    int32 index = 2;
 }
 
 message AppButtonReleaseRequest {

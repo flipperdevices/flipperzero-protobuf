@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.21]
+### Added
+- Application AppButtonPressRequest now supports button indices in addition to names.
+
 ## [0.20]
 ### Added
 - Storage ListRequest message now has a file size filter.
