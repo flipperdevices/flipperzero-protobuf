@@ -23,13 +23,13 @@ enum CommandStatus {
 
     /**< Storage Errors */
     ERROR_STORAGE_NOT_READY = 5; /**< FS not ready */
-    ERROR_STORAGE_EXIST = 6; /**< File/Dir alrady exist */
+    ERROR_STORAGE_EXIST = 6; /**< File/Dir already exist */
     ERROR_STORAGE_NOT_EXIST = 7; /**< File/Dir does not exist */
     ERROR_STORAGE_INVALID_PARAMETER = 8; /**< Invalid API parameter */
     ERROR_STORAGE_DENIED = 9; /**< Access denied */
     ERROR_STORAGE_INVALID_NAME = 10; /**< Invalid name/path */
     ERROR_STORAGE_INTERNAL = 11; /**< Internal error */
-    ERROR_STORAGE_NOT_IMPLEMENTED = 12; /**< Functon not implemented */
+    ERROR_STORAGE_NOT_IMPLEMENTED = 12; /**< Function not implemented */
     ERROR_STORAGE_ALREADY_OPEN = 13; /**< File/Dir already opened */
     ERROR_STORAGE_DIR_NOT_EMPTY = 18; /**< Directory, you're going to remove is not empty */
 
