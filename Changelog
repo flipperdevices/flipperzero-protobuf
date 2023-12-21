@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.22]
+### Added
+- StartVirtualDisplayRequest: optional send_input to request input from device
+
 ## [0.21]
 ### Added
 - Application AppButtonPressRequest now supports button indices in addition to names.
