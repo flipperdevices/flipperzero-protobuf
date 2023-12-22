@@ -61,6 +61,7 @@ message ReadResponse {
 message WriteRequest {
     string path = 1;
     File file = 2;
+    bool append = 3;
 }
 
 message DeleteRequest {
