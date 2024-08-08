@@ -123,6 +123,9 @@ message Main {
         .PB_Gpio.ReadPin gpio_read_pin = 55;
         .PB_Gpio.ReadPinResponse gpio_read_pin_response = 56;
         .PB_Gpio.WritePin gpio_write_pin = 57;
+        .PB_Gpio.GetOtgMode gpio_get_otg_mode = 72;
+        .PB_Gpio.GetOtgModeResponse gpio_get_otg_mode_response = 73;
+        .PB_Gpio.SetOtgMode gpio_set_otg_mode = 74;
         .PB_App.AppStateResponse app_state_response = 58;
         .PB_Property.GetRequest property_get_request = 61;
         .PB_Property.GetResponse property_get_response = 62;
