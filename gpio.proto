@@ -25,6 +25,11 @@ enum GpioInputPull {
     DOWN = 2;
 };
 
+enum GpioOtgMode {
+    OFF = 0;
+    ON = 1;
+};
+
 message SetPinMode {
     GpioPin pin = 1;
     GpioPinMode mode = 2;
@@ -55,3 +60,14 @@ message WritePin {
     GpioPin pin = 1;
     uint32 value = 2;
 }
+
+message GetOtgMode {
+};
+
+message GetOtgModeResponse {
+    GpioOtgMode mode = 1;
+};
+
+message SetOtgMode {
+    GpioOtgMode mode = 1;
+};
