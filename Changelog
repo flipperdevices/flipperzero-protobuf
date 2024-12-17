@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.25]
+### Added
+- App: New AppButtonPressReleaseRequest, presses and releases a button in one request
+
 ## [0.24]
 ### Added
 - Gpio: 5V control messages: GetOtgMode, GetOtgModeResponse, SetOtgMode
