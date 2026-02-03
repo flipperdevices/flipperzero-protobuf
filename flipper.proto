@@ -6,6 +6,7 @@ import "gui.proto";
 import "gpio.proto";
 import "property.proto";
 import "desktop.proto";
+import "network.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
@@ -135,6 +136,15 @@ message Main {
         .PB_Desktop.StatusSubscribeRequest desktop_status_subscribe_request = 68;
         .PB_Desktop.StatusUnsubscribeRequest desktop_status_unsubscribe_request = 69;
         .PB_Desktop.Status desktop_status = 70;
+
+        .PB_Network.ConnectRequest network_connect_request = 76;
+        .PB_Network.ConnectResponse network_connect_response = 77;
+        .PB_Network.SendRequest network_send_request = 78;
+        .PB_Network.SendResponse network_send_response = 79;
+        .PB_Network.ReceiveData network_receive_data = 80;
+        .PB_Network.CloseRequest network_close_request = 81;
+        .PB_Network.CloseResponse network_close_response = 82;
+        .PB_Network.StateChanged network_state_changed = 83;
     }
 }
 
