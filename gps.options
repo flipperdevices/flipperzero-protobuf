@@ -1,0 +1,2 @@
+PB_Gps.StreamStartRequest.frequency int_size:IS_8
+PB_Gps.Location.satellites int_size:IS_8
