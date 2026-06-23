@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.26]
+### Added
+- GPS: StreamStartRequest, StreamStopRequest, LocationRequest, Location, gps errors
+
 ## [0.25]
 ### Added
 - App: New AppButtonPressReleaseRequest, presses and releases a button in one request
