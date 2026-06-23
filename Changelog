@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.28]
+### Added
+- Network: Companion proxy API for TCP/UDP connections
+
+## [0.27]
+### Changed
+- Gps: Location now uses integer fixed-point fields (sint32/uint32) instead of float/double
+
 ## [0.26]
 ### Added
 - GPS: StreamStartRequest, StreamStopRequest, LocationRequest, Location, gps errors
