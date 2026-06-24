@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.29]
+### Added
+- Network: HTTP requests and WebSocket connection API
+
 ## [0.28]
 ### Added
 - Network: Companion proxy API for TCP/UDP connections

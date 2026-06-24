@@ -8,6 +8,15 @@ enum Protocol {
     UDP = 1;
 }
 
+enum HttpMethod {
+    HTTP_GET = 0;
+    HTTP_POST = 1;
+    HTTP_PUT = 2;
+    HTTP_PATCH = 3;
+    HTTP_DELETE = 4;
+    HTTP_HEAD = 5;
+}
+
 enum ConnectionState {
     DISCONNECTED = 0;
     CONNECTING = 1;
@@ -29,6 +38,9 @@ enum ErrorCode {
     MAX_CONNECTIONS = 10;
     INVALID_PROTOCOL = 11;
     INTERNAL_ERROR = 12;
+    TLS_FAILED = 13;
+    INVALID_URL = 14;
+    FILE_ERROR = 15;
 }
 
 message ConnectRequest {
@@ -36,7 +48,7 @@ message ConnectRequest {
     uint32 port = 2;
     Protocol protocol = 3;
     uint32 timeout_ms = 4;
-    uint32 connection_id = 5;  // Client-assigned connection ID
+    uint32 connection_id = 5;
 }
 
 message ConnectResponse {
@@ -49,6 +61,7 @@ message ConnectResponse {
 message SendRequest {
     uint32 connection_id = 1;
     bytes data = 2;
+    bool binary = 3;
 }
 
 message SendResponse {
@@ -60,6 +73,7 @@ message SendResponse {
 message ReceiveData {
     uint32 connection_id = 1;
     bytes data = 2;
+    bool binary = 3;
 }
 
 message CloseRequest {
@@ -75,4 +89,32 @@ message StateChanged {
     uint32 connection_id = 1;
     ConnectionState state = 2;
     ErrorCode error = 3;
+}
+
+message HttpRequest {
+    uint32 request_id = 1;
+    HttpMethod method = 2;
+    string url = 3;
+    string headers = 4;
+    bytes body = 5;
+    string send_path = 6;
+    string save_path = 7;
+    uint32 timeout_ms = 8;
+    bool include_headers = 9;
+}
+
+message HttpResponse {
+    uint32 request_id = 1;
+    uint32 status = 2;
+    ErrorCode error = 3;
+    string headers = 4;
+    uint32 body_size = 5;
+    bool saved_to_file = 6;
+}
+
+message WebSocketOpenRequest {
+    uint32 connection_id = 1;
+    string url = 2;
+    string headers = 3;
+    uint32 timeout_ms = 4;
 }

@@ -155,6 +155,9 @@ message Main {
         .PB_Gps.StreamStopRequest gps_stream_stop_request = 85;
         .PB_Gps.LocationRequest gps_location_request = 86;
         .PB_Gps.Location gps_location = 87;
+        .PB_Network.HttpRequest network_http_request = 88;
+        .PB_Network.HttpResponse network_http_response = 89;
+        .PB_Network.WebSocketOpenRequest network_websocket_open_request = 90;
     }
 }
 
