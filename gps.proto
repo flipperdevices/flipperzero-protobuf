@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package PB_Gps;
+option java_package = "com.flipperdevices.protobuf.gps";
+
+message StreamStartRequest {
+    uint32 frequency = 1;
+}
+
+message StreamStopRequest {
+}
+
+message LocationRequest {
+}
+
+message Location {
+    sint32 latitude = 1; // degrees * 1e7
+    sint32 longitude = 2; // degrees * 1e7
+    uint32 heading = 3; // degrees * 100, 0..36000
+    uint32 speed = 4; // millimeters per second
+    sint32 altitude = 5; // centimeters
+    uint32 accuracy = 6; // millimeters
+    uint32 satellites = 7;
+}

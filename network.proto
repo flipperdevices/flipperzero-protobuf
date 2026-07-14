@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+package PB_Network;
+option java_package = "com.flipperdevices.protobuf.network";
+
+enum Protocol {
+    TCP = 0;
+    UDP = 1;
+}
+
+enum HttpMethod {
+    HTTP_GET = 0;
+    HTTP_POST = 1;
+    HTTP_PUT = 2;
+    HTTP_PATCH = 3;
+    HTTP_DELETE = 4;
+    HTTP_HEAD = 5;
+}
+
+enum ConnectionState {
+    DISCONNECTED = 0;
+    CONNECTING = 1;
+    CONNECTED = 2;
+    ERROR = 3;
+}
+
+enum ErrorCode {
+    NONE = 0;
+    DNS_FAILED = 1;
+    TIMEOUT = 2;
+    CONNECTION_REFUSED = 3;
+    NETWORK_UNREACHABLE = 4;
+    HOST_UNREACHABLE = 5;
+    INVALID_CONNECTION = 6;
+    NOT_CONNECTED = 7;
+    SEND_FAILED = 8;
+    RECEIVE_FAILED = 9;
+    MAX_CONNECTIONS = 10;
+    INVALID_PROTOCOL = 11;
+    INTERNAL_ERROR = 12;
+    TLS_FAILED = 13;
+    INVALID_URL = 14;
+    FILE_ERROR = 15;
+}
+
+message ConnectRequest {
+    string host = 1;
+    uint32 port = 2;
+    Protocol protocol = 3;
+    uint32 timeout_ms = 4;
+    uint32 connection_id = 5;
+}
+
+message ConnectResponse {
+    uint32 connection_id = 1;
+    ConnectionState state = 2;
+    ErrorCode error = 3;
+    string resolved_ip = 4;
+}
+
+message SendRequest {
+    uint32 connection_id = 1;
+    bytes data = 2;
+    bool binary = 3;
+}
+
+message SendResponse {
+    uint32 connection_id = 1;
+    uint32 bytes_sent = 2;
+    ErrorCode error = 3;
+}
+
+message ReceiveData {
+    uint32 connection_id = 1;
+    bytes data = 2;
+    bool binary = 3;
+}
+
+message CloseRequest {
+    uint32 connection_id = 1;
+}
+
+message CloseResponse {
+    uint32 connection_id = 1;
+    ErrorCode error = 2;
+}
+
+message StateChanged {
+    uint32 connection_id = 1;
+    ConnectionState state = 2;
+    ErrorCode error = 3;
+}
+
+message HttpRequest {
+    uint32 request_id = 1;
+    HttpMethod method = 2;
+    string url = 3;
+    string headers = 4;
+    bytes body = 5;
+    string send_path = 6;
+    string save_path = 7;
+    uint32 timeout_ms = 8;
+    bool include_headers = 9;
+}
+
+message HttpResponse {
+    uint32 request_id = 1;
+    uint32 status = 2;
+    ErrorCode error = 3;
+    string headers = 4;
+    uint32 body_size = 5;
+    bool saved_to_file = 6;
+}
+
+message WebSocketOpenRequest {
+    uint32 connection_id = 1;
+    string url = 2;
+    string headers = 3;
+    uint32 timeout_ms = 4;
+}

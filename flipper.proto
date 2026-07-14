@@ -6,6 +6,8 @@ import "gui.proto";
 import "gpio.proto";
 import "property.proto";
 import "desktop.proto";
+import "network.proto";
+import "gps.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
@@ -46,6 +48,12 @@ enum CommandStatus {
     /**< GPIO Errors */
     ERROR_GPIO_MODE_INCORRECT = 58;
     ERROR_GPIO_UNKNOWN_PIN_MODE = 59;
+
+    /**< GPS Errors */
+    ERROR_GPS_NOT_SUPPORTED = 60; /**< Companion device has no location capability */
+    ERROR_GPS_NO_PERMISSION = 61; /**< Location permission not granted on companion device */
+    ERROR_GPS_DISABLED = 62; /**< Location services are disabled on companion device */
+    ERROR_GPS_UNKNOWN = 63; /**< Unknown location error on companion device */
 }
 
 /* There are Server commands (e.g. Storage_write), which have no body message
@@ -135,6 +143,21 @@ message Main {
         .PB_Desktop.StatusSubscribeRequest desktop_status_subscribe_request = 68;
         .PB_Desktop.StatusUnsubscribeRequest desktop_status_unsubscribe_request = 69;
         .PB_Desktop.Status desktop_status = 70;
+        .PB_Network.ConnectRequest network_connect_request = 76;
+        .PB_Network.ConnectResponse network_connect_response = 77;
+        .PB_Network.SendRequest network_send_request = 78;
+        .PB_Network.SendResponse network_send_response = 79;
+        .PB_Network.ReceiveData network_receive_data = 80;
+        .PB_Network.CloseRequest network_close_request = 81;
+        .PB_Network.CloseResponse network_close_response = 82;
+        .PB_Network.StateChanged network_state_changed = 83;
+        .PB_Gps.StreamStartRequest gps_stream_start_request = 84;
+        .PB_Gps.StreamStopRequest gps_stream_stop_request = 85;
+        .PB_Gps.LocationRequest gps_location_request = 86;
+        .PB_Gps.Location gps_location = 87;
+        .PB_Network.HttpRequest network_http_request = 88;
+        .PB_Network.HttpResponse network_http_response = 89;
+        .PB_Network.WebSocketOpenRequest network_websocket_open_request = 90;
     }
 }
 
