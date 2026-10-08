@@ -52,10 +52,13 @@ message ListResponse {
 
 message ReadRequest {
     string path = 1;
+    uint32 offset = 2;
+    uint32 size = 3;
 }
 
 message ReadResponse {
     File file = 1;
+    bool ranged = 2;
 }
 
 message WriteRequest {

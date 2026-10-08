@@ -1,0 +1,17 @@
+PB_Network.ConnectRequest.host              type:FT_POINTER
+PB_Network.ConnectResponse.resolved_ip      type:FT_POINTER
+PB_Network.SendRequest.data                 type:FT_POINTER
+PB_Network.ReceiveData.data                 type:FT_POINTER
+
+// Max constraints for documentation - not enforced by nanopb, clients should respect these
+PB_Network.ConnectRequest.host              max_length:255
+PB_Network.SendRequest.data                 max_size:512
+PB_Network.ReceiveData.data                 max_size:512
+PB_Network.HttpRequest.url                  type:FT_POINTER
+PB_Network.HttpRequest.headers              type:FT_POINTER
+PB_Network.HttpRequest.body                 type:FT_POINTER
+PB_Network.HttpRequest.send_path            type:FT_POINTER
+PB_Network.HttpRequest.save_path            type:FT_POINTER
+PB_Network.HttpResponse.headers             type:FT_POINTER
+PB_Network.WebSocketOpenRequest.url         type:FT_POINTER
+PB_Network.WebSocketOpenRequest.headers     type:FT_POINTER
